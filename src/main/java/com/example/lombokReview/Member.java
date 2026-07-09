@@ -4,16 +4,15 @@ import lombok.*;
 
 
 @ToString(exclude = { "pw" })
-@AllArgsConstructor
-@RequiredArgsConstructor
 @EqualsAndHashCode
+@RequiredArgsConstructor
 public class Member {
-    @Getter
+    @Getter(AccessLevel.PUBLIC) // == @Getter
     private final int id;
 
     private String pw;
 
-    @Getter
+    @Getter(AccessLevel.PROTECTED)
     @Setter
     private String name;
 
