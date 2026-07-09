@@ -7,12 +7,7 @@ import com.example.lombokReview.Member;
 @SpringBootApplication
 public class LombokReviewApplication {
 	public static void main(String[] args) {
-		Member m = new Member(1);
-		System.out.println(m.toString());
-
-		Member m2 = new Member(1);
-		System.out.println(m2.toString());
-
+		Admin a = new Admin(123, "123pw", "Emily", "emily@gmail.com", "BACKEND");
+		System.out.println(a.toString());
 	}
-
 }

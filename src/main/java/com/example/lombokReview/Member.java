@@ -2,21 +2,26 @@ package com.example.lombokReview;
 
 import lombok.*;
 
-
 @ToString(exclude = { "pw" })
+    // Variation:
+        // @ToString(of = {"id", "email"})
+        // @ToString(onlyExplicitlyIncluded = true)
 @EqualsAndHashCode
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class Member {
+//    @ToString.Include
     @Getter(AccessLevel.PUBLIC) // == @Getter
-    private final int id;
+    protected final int id;
 
     private String pw;
 
+//    @ToString.Include
     @Getter(AccessLevel.PROTECTED)
     @Setter
-    private String name;
+    protected String name;
 
+//    @ToString.Include
     @Getter
     @Setter
-    private String email;
+    protected String email;
 }
