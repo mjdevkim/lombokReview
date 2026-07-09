@@ -2,28 +2,22 @@ package com.example.lombokReview;
 
 import lombok.*;
 
-@ToString(exclude = { "pw" })
-    // Variation:
-        // @ToString(of = {"id", "email"})
-        // @ToString(onlyExplicitlyIncluded = true)
-@EqualsAndHashCode
-//  @EqualsAndHashCode(exclude = { "email" })
-@AllArgsConstructor
+@Getter
+@Builder    // 클래스 전체에 Builder 정의
+@ToString
 public class Member {
-//    @ToString.Include
-    @Getter(AccessLevel.PUBLIC) // == @Getter
-    protected final int id;
+    private int id;
+    private int age;
+    private String name;
+    private String email;
 
-    private String pw;
-
-//    @ToString.Include
-    @Getter(AccessLevel.PROTECTED)
-    @Setter
-    // @EqualsAndHashCode.Exclude -> 동등성 비교에서 제외할 필드라고 표시
-    protected String name;
-
-//    @ToString.Include
-    @Getter
-    @Setter
-    protected String email;
+    static class MemberBuilder {
+        public MemberBuilder age(int age) {
+            if (age < 20) {
+                throw new RuntimeException("미성년자는 가입할 수 없습니다: " + age);
+            }
+            this.age = age;
+            return this;
+        }
+    }
 }

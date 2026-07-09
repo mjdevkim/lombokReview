@@ -7,12 +7,13 @@ import com.example.lombokReview.Member;
 @SpringBootApplication
 public class LombokReviewApplication {
 	public static void main(String[] args) {
-		Admin a = new Admin(123, "123pw", "Emily", "emily@gmail.com", "BACKEND");
-		System.out.println(a.toString());
+		Member mem = Member.builder()
+				.id(123)
+				.name("MJ")
+				.age(22)
+				.email("mj@email.com")
+				.build(); // 객체가 생성되는 시점
 
-		Admin b = new Admin(123, "123pw", "Emily", "emily@gmail.com", "BACKEND");
-		System.out.println(b.toString());
-
-		System.out.println("Equality test! - " + a.equals(b));
+		System.out.println(mem.toString());
 	}
 }
