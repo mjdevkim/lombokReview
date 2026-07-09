@@ -7,9 +7,12 @@ import lombok.*;
 @ToString
 public class Member {
     private int id;
-    private int age;
-    private String name;
-    private String email;
+//    @Builder.Default
+    private int age = 20;
+    @Builder.Default
+    private String name = "Unknown";
+    @Builder.Default
+    private String email = "Unknown";
 
     static class MemberBuilder {
         public MemberBuilder age(int age) {
