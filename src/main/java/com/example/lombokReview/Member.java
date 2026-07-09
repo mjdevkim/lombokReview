@@ -5,10 +5,11 @@ import lombok.*;
 
 @ToString(exclude = { "pw" })
 @AllArgsConstructor
+@RequiredArgsConstructor
 @EqualsAndHashCode
 public class Member {
     @Getter
-    private int id;
+    private final int id;
 
     private String pw;
 
