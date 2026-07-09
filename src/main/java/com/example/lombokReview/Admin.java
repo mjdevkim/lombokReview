@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Admin extends Member {
     private String role;

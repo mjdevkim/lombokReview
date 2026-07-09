@@ -7,6 +7,7 @@ import lombok.*;
         // @ToString(of = {"id", "email"})
         // @ToString(onlyExplicitlyIncluded = true)
 @EqualsAndHashCode
+//  @EqualsAndHashCode(exclude = { "email" })
 @AllArgsConstructor
 public class Member {
 //    @ToString.Include
@@ -18,6 +19,7 @@ public class Member {
 //    @ToString.Include
     @Getter(AccessLevel.PROTECTED)
     @Setter
+    // @EqualsAndHashCode.Exclude -> 동등성 비교에서 제외할 필드라고 표시
     protected String name;
 
 //    @ToString.Include
